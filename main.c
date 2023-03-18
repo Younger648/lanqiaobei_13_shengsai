@@ -1,7 +1,7 @@
 #include "include.h"
 
 
-uint aaa;
+
 
 void main()
 {
