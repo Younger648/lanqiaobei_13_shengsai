@@ -3,8 +3,7 @@
 
 
 
-void menu_TIMER();
-void led_TIMER();
+
 void  InitTimer0()
 {
 	TMOD &= 0xF0;		//设置定时器模式
