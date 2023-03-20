@@ -44,17 +44,19 @@ sbit C1 = P4^4;
 
 
 //LEDµÆÒý½Å¶¨Òå
-sbit L1 = P0^0;
-sbit L2 = P0^1;
-sbit L3 = P0^2;
-sbit L4 = P0^3;
+//sbit L1 = P0^0;
+//sbit L2 = P0^1;
+//sbit L3 = P0^2;
+//sbit L4 = P0^3;
 //sbit L5 = P0^4;
-sbit L6 = P0^5;
-sbit L7 = P0^6;
-sbit L8 = P0^7;
+//sbit L6 = P0^5;
+//sbit L7 = P0^6;
+//sbit L8 = P0^7;
 
 
 sbit jidianqi = P0^4;
+
+sbit BUZZ = P0^6;
 
 
 #define DELAY_TIME 5

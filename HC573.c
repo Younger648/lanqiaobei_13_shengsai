@@ -20,5 +20,9 @@ void SelectHC573(uchar n)
 		case 7:
 		 P2 = (P2 & 0x1f) | 0xe0;
 		break;
+		
+		case 0:
+		 P2 = (P2 & 0x1f) | 0x00;
+		break;
 	 }
  }

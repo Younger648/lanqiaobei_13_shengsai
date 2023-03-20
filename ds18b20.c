@@ -145,7 +145,7 @@ void add_minus_key()
 /************************带小数点的配置***************************/ 
 void Read_DS18b20_config()//带小数点的配置
  {
-	  uchar LSB ,HSB;
+	 uchar LSB ,HSB;
 	 EA = 0;
    init_ds18b20();
 	 EA = 1;

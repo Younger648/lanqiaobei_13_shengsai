@@ -25,6 +25,7 @@ void serviceTimer0() interrupt 1
 	static char Sec = 0;
 	
 	P0 = 0xff;
+	BUZZ = 0;
 	TL0 = 0x66;		//设置定时初始值
 	TH0 = 0xFC;		//设置定时初始值
 
@@ -71,10 +72,6 @@ void serviceTimer0() interrupt 1
 			LED_config(1,0);
 	
 
-	
-
-	
-	
 	
 	
 	
