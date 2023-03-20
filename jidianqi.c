@@ -6,7 +6,7 @@ void jidianqi_scon()
 {
   SelectHC573(5);
 	
-	if((temp / 10 >= count) || (Time [1] == 0 && Time [0] < 6))
+	if(temp / 10 >= count)
 	{
 		
 		jidianqi = 1;
