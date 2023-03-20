@@ -102,18 +102,8 @@ void led_TIMER()//菜单1，led2点亮
 
 
 
-void menu_TIMER()
-{
-	//菜单1
-	if(Scon == 1)
-		SMG_ds18b20_scon();
-	//菜单2
-	else if(Scon == 2)
-		SMG_ds1302_scon();
-	//菜单3
-	else if(Scon == 3)
-		SMG_ds18b20_scon1();
-}
+
+
 
 
 

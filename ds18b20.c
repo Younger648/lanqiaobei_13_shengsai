@@ -17,16 +17,20 @@ uchar count = 23;
 void Read_DS18b20_config()//带小数点的配置
  {
 	 uchar LSB ,HSB;
+	 
 	 EA = 0;
    init_ds18b20();
 	 EA = 1;
+	 
 	 Write_DS18B20(0xcc);
    Write_DS18B20(0x44);
 		
 	 delaySMG(10000);
+	 
 		EA = 0;
 	 init_ds18b20();
 	 	EA = 1;
+	 
 	 Write_DS18B20(0xcc);
    Write_DS18B20(0xbe);
 		
@@ -139,14 +143,13 @@ void add_minus_key()
 	KBD(3);
 	if(C4 == 0)
 	{
-//		 EA = 0;
+
 		 Delay5ms();
 		 if(C4 == 0)
 		 {
 			count ++;
 		 }
 		 while(C4 == 0);
-//		 EA = 1;
 	}
 
 
@@ -156,14 +159,12 @@ void add_minus_key()
   	KBD(4);
 		if(C4 == 0)
 		{
-//			EA = 0;
 		  Delay5ms();//按键消抖
 			if(C4 == 0)
 			{
 				count --;
 			}	
-			while(C4 == 0);	//按键松手检测
-//      EA = 1;			
+			while(C4 == 0);	//按键松手检测			
 	}
 		
 		
