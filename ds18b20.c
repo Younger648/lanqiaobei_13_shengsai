@@ -8,6 +8,44 @@ uint dat_1;
 uint dat_3;
 uchar count = 23;
 
+
+
+
+ 
+ 
+/************************带小数点的配置***************************/ 
+void Read_DS18b20_config()//带小数点的配置
+ {
+	 uchar LSB ,HSB;
+	 EA = 0;
+   init_ds18b20();
+	 EA = 1;
+	 Write_DS18B20(0xcc);
+   Write_DS18B20(0x44);
+		
+	 delaySMG(10000);
+		EA = 0;
+	 init_ds18b20();
+	 	EA = 1;
+	 Write_DS18B20(0xcc);
+   Write_DS18B20(0xbe);
+		
+	 LSB = Read_DS18B20();//高八位
+   HSB = Read_DS18B20();//低八位
+		
+		temp = HSB;
+		temp = (temp << 8) | LSB;
+		if((temp & 0x800) == 0x0000)
+		{
+		 temp >>= 4;
+		 temp = temp * 10;
+		 temp = temp + (LSB & 0x0f) * 0.625;
+		
+		}
+ }
+
+ 
+ 
 ///************************带小数点的数码管显示***************************/
 
 
@@ -54,7 +92,6 @@ void SMG_ds18b20_scon()
  }
 
  
-
 
 
 
@@ -137,45 +174,7 @@ void add_minus_key()
   count = 10;		
 		
 		
-}
-
-
- 
- 
-/************************带小数点的配置***************************/ 
-void Read_DS18b20_config()//带小数点的配置
- {
-	 uchar LSB ,HSB;
-	 EA = 0;
-   init_ds18b20();
-	 EA = 1;
-	 Write_DS18B20(0xcc);
-   Write_DS18B20(0x44);
-		
-	 delaySMG(10000);
-		EA = 0;
-	 init_ds18b20();
-	 	EA = 1;
-	 Write_DS18B20(0xcc);
-   Write_DS18B20(0xbe);
-		
-	 LSB = Read_DS18B20();//高八位
-   HSB = Read_DS18B20();//低八位
-		
-		temp = HSB;
-		temp = (temp << 8) | LSB;
-		if((temp & 0x800) == 0x0000)
-		{
-		 temp >>= 4;
-		 temp = temp * 10;
-		 temp = temp + (LSB & 0x0f) * 0.625;
-		
-		}
- }
-
- 
- 
- 
+} 
  
  
  
