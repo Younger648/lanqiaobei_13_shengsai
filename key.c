@@ -62,7 +62,7 @@ void KBD(uchar e)
 
 //	SMGbit(SMG_duanma[i],SMG_weizhi[1]);
 //}
- 
+// 
  
  
  

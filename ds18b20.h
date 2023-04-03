@@ -12,6 +12,9 @@ extern uint temp;
 extern uint dat_1;
 extern uint dat_3;
 extern uchar count;
+extern uchar dat1;
+extern uchar dat2;
+
 
 extern uchar SMGNO_DOT[11];
 //extern uchar SMG_DOT[10];

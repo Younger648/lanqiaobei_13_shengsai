@@ -6,7 +6,8 @@ uchar Time [7] = {0x30,0x59,0x22,0x12,0x11,0x01,0x23};//秒，分，时，日，月，周，
 
 
 uint dat_2;
-				
+uchar dat1;
+uchar dat2;
 
 void Write_Ds1302(unsigned  char temp) 
 {
@@ -89,8 +90,7 @@ void Read_ds1302_Timer()//读地址（将7个地址读出来）
  }
  
  
- 
- 
+
 
 
 
@@ -98,6 +98,8 @@ void SMG_ds1302_scon()
 {
 
 		 static char b;
+		 dat1 = ((Time [2] >> 4)*10 + (Time [2] & 0x0f));
+		 dat2 = ((Time [1] >> 4)*10 + (Time [1] & 0x0f));
 	   b ++;
 		 if(b == 8)
 		 b = 1;
@@ -114,12 +116,12 @@ void SMG_ds1302_scon()
 			 break;
 			 
 			 case 3:
-			   dat_2 = Time [2] / 16;
+			   dat_2 = dat1 / 10;
 			   adree = 3;
 			 break;
 			 
 			 case 4:
-			   dat_2 = Time [2] % 16;
+			   dat_2 = dat1 % 10;
 			   adree = 4;
 			 break;
 			 
@@ -129,12 +131,12 @@ void SMG_ds1302_scon()
 			 break;
 			 
 			 case 6:
-			   dat_2 = Time [1] / 16;
+			   dat_2 = dat2 / 10;
 			   adree = 6;
 			 break;
 			 
 			 case 7:
-			   dat_2 = Time [1] % 16;
+			   dat_2 = dat2 % 10;
 			   adree = 7;
 			 break;
 		 }
