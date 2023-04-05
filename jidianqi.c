@@ -19,7 +19,7 @@ void jidianqi_scon()
 		jidianqi = 0;
 		BUZZ = 0;
 	}
-	
+	SelectHC573(0);
 
 }
 

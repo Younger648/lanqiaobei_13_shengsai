@@ -99,7 +99,7 @@ void SMG_ds1302_scon()
 
 		 static char b;
 		 dat1 = ((Time [2] >> 4)*10 + (Time [2] & 0x0f));
-		 dat2 = ((Time [1] >> 4)*10 + (Time [1] & 0x0f));
+		 dat2 = ((Time [0] >> 4)*10 + (Time [0] & 0x0f));
 	   b ++;
 		 if(b == 8)
 		 b = 1;

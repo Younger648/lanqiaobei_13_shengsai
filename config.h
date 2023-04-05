@@ -14,7 +14,7 @@ sbit RST = P1^3;   // DS1302复位
 
 
 //IIC总线引脚定义
-//sbit SDA = P2^1;  /* 数据线 */
+
 sbit SCL = P2^0;  /* 时钟线 */
 
 
