@@ -52,7 +52,7 @@ void serviceTimer0() interrupt 1
   }
 	else
 	LED_config(3,0);
-	SelectHC573(0);
+	SelectHC573(0);//ø…∑¿÷πledµ∆∞µµ≠
 	
 	
 	
